@@ -24,9 +24,9 @@ export default function HeroCarousel() {
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
-    <section className="relative w-full h-[500px] lg:h-[900px] overflow-hidden group">
+    <section className="relative w-full h-[190px] lg:h-[900px] overflow-hidden group">
       {/* Carousel Viewport */}
-      <div className="overflow-hidden h-150" ref={emblaRef}>
+      <div className="overflow-hidden lg:h-150 h-[190px]" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, index) => (
             <div 
@@ -43,13 +43,13 @@ export default function HeroCarousel() {
 
               {/* Content */}
               <div className="relative z-10 max-w-3xl px-6">
-                <h2 className="text-5xl font-orbitron md:text-6xl font-black text-[#111] mb-4 tracking-tight">
+                <h2 className="text-3xl font-orbitron md:text-6xl font-black text-[#111] mb-4 tracking-tight">
                   {slide.title}
                 </h2>
-                <p className="text-lg text-gray-800 font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-sm lg:text-lg text-gray-800 font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
                   {slide.description}
                 </p>
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="hidden lg:flex flex-wrap justify-center gap-4">
                   <button className="bg-primary text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-[#e6a200] transition-colors rounded-sm shadow-lg">
                     Our Services
                   </button>
@@ -79,7 +79,7 @@ export default function HeroCarousel() {
 
       {/* Bottom Service Cards Mockup */}
       {/* Bottom Service Cards */}
-      <div className="lg:absolute bottom-12 z-30 w-full px-4">
+      <div className="hidden lg:block absolute bottom-12 z-30 w-full px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 items-end">
           
           {/* Left Card */}
