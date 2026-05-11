@@ -5,8 +5,18 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X, CheckCircle, Wrench, Ruler, HardHat, Clock } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 
+interface Service {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  fullDescription: string;
+  features: string[];
+  process: string[];
+}
+
 const Card = () => {
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   // 1. Initialize Embla with 3 slides per view on desktop
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
