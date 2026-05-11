@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { 
   Cpu, 
   Code2, 
@@ -18,8 +18,19 @@ import {
   ArrowRight
 } from 'lucide-react';
 
+interface Tech {
+  id: number;
+  name: string;
+  category: string;
+  icon: ReactNode;
+  shortDesc: string;
+  description: string;
+  features: string[];
+  projects: string;
+}
+
 const TechStack = () => {
-  const [selectedTech, setSelectedTech] = useState(null);
+  const [selectedTech, setSelectedTech] = useState<Tech | null>(null);
 
   const technologies = [
     {

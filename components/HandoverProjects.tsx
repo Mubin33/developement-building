@@ -1,86 +1,61 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { X, Calendar, MapPin, User, CheckCircle } from 'lucide-react';
 
-const HandoverProjects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+interface Project {
+  id: string;
+  title: string;
+  image: string;
+  category: string;
+  location: string;
+  completedDate: string;
+  description: string;
+  value: string;
+  area: string;
+  client: string;
+  features: string[];
+}
 
-  const projects = [
-    {
-      id: 1,
-      title: "Gulshan Heights Tower",
-      category: "Commercial",
-      location: "Gulshan-2, Dhaka",
-      client: "Navana Real Estate Ltd",
-      completedDate: "March 2024",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-      description: "A premium 25-story commercial complex in the heart of Dhaka's business district featuring modern office spaces and retail areas.",
-      area: "85,000 sq ft",
-      value: "৳380 Crore",
-      features: [
-        "Earthquake Resistant Design",
-        "24/7 Power Backup",
-        "Rooftop Garden",
-        "Underground Parking (300 spaces)"
-      ]
-    },
-    {
-      id: 2,
-      title: "Banani Lakeview Residences",
-      category: "Residential",
-      location: "Banani, Dhaka",
-      client: "Sheltech Developers",
-      completedDate: "January 2024",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-      description: "Luxury residential complex with 80 premium apartments overlooking Banani Lake, featuring modern amenities and landscaped gardens.",
-      area: "65,000 sq ft",
-      value: "৳220 Crore",
-      features: [
-        "Lake View Apartments",
-        "Community Center",
-        "Modern Security System",
-        "Children's Play Area"
-      ]
-    },
-    {
-      id: 3,
-      title: "Popular Medical College Extension",
-      category: "Healthcare",
-      location: "Dhanmondi, Dhaka",
-      client: "Popular Medical College",
-      completedDate: "December 2023",
-      image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&q=80",
-      description: "Modern 150-bed hospital extension with specialized care units, advanced diagnostic facilities, and patient-centric design.",
-      area: "55,000 sq ft",
-      value: "৳180 Crore",
-      features: [
-        "Advanced ICU Facilities",
-        "Modular Patient Rooms",
-        "Modern Diagnostic Lab",
-        "Pharmacy & Cafeteria"
-      ]
-    },
-    {
-      id: 4,
-      title: "Chittagong Port Warehouse",
-      category: "Industrial",
-      location: "Chittagong Port Area",
-      client: "Apex Group",
-      completedDate: "October 2023",
-      image: "https://images.unsplash.com/photo-1565793298595-9a879d6f0a1e?w=800&q=80",
-      description: "Large-scale industrial warehouse facility for cargo storage and distribution serving the Chittagong Port operations.",
-      area: "120,000 sq ft",
-      value: "৳95 Crore",
-      features: [
-        "Temperature Controlled Storage",
-        "Loading Docks (16 bays)",
-        "Office Complex",
-        "Fire Safety Systems"
-      ]
-    }
-  ];
+const HandoverProjects = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects');
+        const result = await response.json();
+        if (result.success) {
+          setProjects(result.data.handoverProjects);
+        }
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-20 bg-white px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Handover Projects</h2>
+            <div className="w-16 h-1 bg-primary mx-auto"></div>
+          </div>
+          <div className="flex justify-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-white px-4">

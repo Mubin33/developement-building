@@ -1,102 +1,68 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { X, Calendar, MapPin, User, Clock, TrendingUp, HardHat } from 'lucide-react';
+import { X, MapPin, User, Clock, TrendingUp, HardHat } from 'lucide-react';
+
+interface Milestone {
+  name: string;
+  status: 'completed' | 'in-progress' | 'pending';
+}
+
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  location: string;
+  progress: number;
+  expectedCompletion: string;
+  image: string;
+  description: string;
+  value: string;
+  area: string;
+  team: string;
+  client: string;
+  milestones: Milestone[];
+}
 
 const RunningProjects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Dhaka IT Park Tower",
-      category: "Commercial",
-      location: "Uttara, Dhaka",
-      client: "Bangladesh Computer Council",
-      startDate: "January 2024",
-      expectedCompletion: "December 2025",
-      progress: 65,
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-      description: "A 15-story modern IT hub designed to host tech companies and startups with state-of-the-art facilities in Uttara.",
-      area: "95,000 sq ft",
-      value: "৳280 Crore",
-      team: "180 Workers",
-      milestones: [
-        { name: "Foundation & Structure", status: "completed" },
-        { name: "Exterior Facade", status: "completed" },
-        { name: "Interior Framework", status: "in-progress" },
-        { name: "Systems Installation", status: "pending" },
-        { name: "Final Finishing", status: "pending" }
-      ]
-    },
-    {
-      id: 2,
-      title: "Sylhet Shopping Complex",
-      category: "Retail",
-      location: "Zindabazar, Sylhet",
-      client: "Al-Hamra Group",
-      startDate: "March 2024",
-      expectedCompletion: "June 2025",
-      progress: 42,
-      image: "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?w=800&q=80",
-      description: "Modern multi-level shopping mall featuring retail outlets, food court, cinema, and parking for Sylhet city.",
-      area: "150,000 sq ft",
-      value: "৳165 Crore",
-      team: "220 Workers",
-      milestones: [
-        { name: "Site Preparation", status: "completed" },
-        { name: "Foundation Work", status: "completed" },
-        { name: "Steel Structure", status: "in-progress" },
-        { name: "MEP Installation", status: "pending" },
-        { name: "Interior Fit-out", status: "pending" }
-      ]
-    },
-    {
-      id: 3,
-      title: "Padma River Bridge Approach",
-      category: "Infrastructure",
-      location: "Mawa, Munshiganj",
-      client: "Bangladesh Bridge Authority",
-      startDate: "August 2023",
-      expectedCompletion: "March 2026",
-      progress: 38,
-      image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80",
-      description: "Road infrastructure and service area construction connecting to the Padma Multipurpose Bridge.",
-      area: "12 km approach roads",
-      value: "৳420 Crore",
-      team: "350 Workers",
-      milestones: [
-        { name: "Land Acquisition", status: "completed" },
-        { name: "Earthworks", status: "completed" },
-        { name: "Bridge Approach", status: "in-progress" },
-        { name: "Service Area", status: "pending" },
-        { name: "Road Paving", status: "pending" }
-      ]
-    },
-    {
-      id: 4,
-      title: "Baridhara Heights",
-      category: "Residential",
-      location: "Baridhara, Dhaka",
-      client: "Assure Developers Ltd",
-      startDate: "February 2024",
-      expectedCompletion: "October 2025",
-      progress: 55,
-      image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80",
-      description: "Premium residential complex with 120 luxury apartments, modern amenities, and diplomatic zone proximity.",
-      area: "85,000 sq ft",
-      value: "৳195 Crore",
-      team: "160 Workers",
-      milestones: [
-        { name: "Foundation", status: "completed" },
-        { name: "Core Structure", status: "completed" },
-        { name: "Floor Construction", status: "in-progress" },
-        { name: "Window Installation", status: "pending" },
-        { name: "Interior Works", status: "pending" }
-      ]
-    }
-  ];
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects');
+        const result = await response.json();
+        if (result.success) {
+          setProjects(result.data.runningProjects);
+        }
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-20 bg-[#f4f7f9] px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Running Projects</h2>
+            <div className="w-16 h-1 bg-primary mx-auto"></div>
+          </div>
+          <div className="flex justify-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-[#f4f7f9] px-4">

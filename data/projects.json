@@ -1,0 +1,522 @@
+{
+  "runningProjects": [
+    {
+      "id": 1,
+      "title": "Dhaka IT Park Tower",
+      "category": "Commercial",
+      "location": "Uttara, Dhaka",
+      "client": "Bangladesh Computer Council",
+      "startDate": "January 2024",
+      "expectedCompletion": "December 2025",
+      "progress": 65,
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "description": "A 15-story modern IT hub designed to host tech companies and startups with state-of-the-art facilities in Uttara.",
+      "area": "95,000 sq ft",
+      "value": "৳280 Crore",
+      "team": "180 Workers",
+      "milestones": [
+        { "name": "Foundation & Structure", "status": "completed" },
+        { "name": "Exterior Facade", "status": "completed" },
+        { "name": "Interior Framework", "status": "in-progress" },
+        { "name": "Systems Installation", "status": "pending" },
+        { "name": "Final Finishing", "status": "pending" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Sylhet Shopping Complex",
+      "category": "Retail",
+      "location": "Zindabazar, Sylhet",
+      "client": "Al-Hamra Group",
+      "startDate": "March 2024",
+      "expectedCompletion": "June 2025",
+      "progress": 42,
+      "image": "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?w=800&q=80",
+      "description": "Modern multi-level shopping mall featuring retail outlets, food court, cinema, and parking for Sylhet city.",
+      "area": "150,000 sq ft",
+      "value": "৳165 Crore",
+      "team": "220 Workers",
+      "milestones": [
+        { "name": "Site Preparation", "status": "completed" },
+        { "name": "Foundation Work", "status": "completed" },
+        { "name": "Steel Structure", "status": "in-progress" },
+        { "name": "MEP Installation", "status": "pending" },
+        { "name": "Interior Fit-out", "status": "pending" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Padma River Bridge Approach",
+      "category": "Infrastructure",
+      "location": "Mawa, Munshiganj",
+      "client": "Bangladesh Bridge Authority",
+      "startDate": "August 2023",
+      "expectedCompletion": "March 2026",
+      "progress": 38,
+      "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80",
+      "description": "Road infrastructure and service area construction connecting to the Padma Multipurpose Bridge.",
+      "area": "12 km approach roads",
+      "value": "৳420 Crore",
+      "team": "350 Workers",
+      "milestones": [
+        { "name": "Land Acquisition", "status": "completed" },
+        { "name": "Earthworks", "status": "completed" },
+        { "name": "Bridge Approach", "status": "in-progress" },
+        { "name": "Service Area", "status": "pending" },
+        { "name": "Road Paving", "status": "pending" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Baridhara Heights",
+      "category": "Residential",
+      "location": "Baridhara, Dhaka",
+      "client": "Assure Developers Ltd",
+      "startDate": "February 2024",
+      "expectedCompletion": "October 2025",
+      "progress": 55,
+      "image": "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80",
+      "description": "Premium residential complex with 120 luxury apartments, modern amenities, and diplomatic zone proximity.",
+      "area": "85,000 sq ft",
+      "value": "৳195 Crore",
+      "team": "160 Workers",
+      "milestones": [
+        { "name": "Foundation", "status": "completed" },
+        { "name": "Core Structure", "status": "completed" },
+        { "name": "Floor Construction", "status": "in-progress" },
+        { "name": "Window Installation", "status": "pending" },
+        { "name": "Interior Works", "status": "pending" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Chittagong Port Terminal",
+      "category": "Industrial",
+      "location": "Chittagong Port",
+      "client": "CPA Authority",
+      "startDate": "May 2024",
+      "expectedCompletion": "August 2026",
+      "progress": 28,
+      "image": "https://images.unsplash.com/photo-1565793298595-9a879d6f0a1e?w=800&q=80",
+      "description": "Modern container terminal expansion with automated handling systems and deep-water berths.",
+      "area": "200,000 sq ft",
+      "value": "৳550 Crore",
+      "team": "450 Workers",
+      "milestones": [
+        { "name": "Site Survey", "status": "completed" },
+        { "name": "Dredging", "status": "in-progress" },
+        { "name": "Pile Foundation", "status": "in-progress" },
+        { "name": "Terminal Structure", "status": "pending" },
+        { "name": "Equipment Installation", "status": "pending" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Rajshahi Medical College Hostel",
+      "category": "Healthcare",
+      "location": "Rajshahi",
+      "client": "Ministry of Health",
+      "startDate": "April 2024",
+      "expectedCompletion": "January 2026",
+      "progress": 35,
+      "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&q=80",
+      "description": "500-bed student hostel with modern amenities for medical students at Rajshahi Medical College.",
+      "area": "75,000 sq ft",
+      "value": "৳125 Crore",
+      "team": "140 Workers",
+      "milestones": [
+        { "name": "Foundation", "status": "completed" },
+        { "name": "Ground Floor", "status": "completed" },
+        { "name": "Upper Floors", "status": "in-progress" },
+        { "name": "Interior", "status": "pending" },
+        { "name": "Landscaping", "status": "pending" }
+      ]
+    }
+  ],
+  "handoverProjects": [
+    {
+      "id": 1,
+      "title": "Gulshan Heights Tower",
+      "category": "Commercial",
+      "location": "Gulshan-2, Dhaka",
+      "client": "Navana Real Estate Ltd",
+      "completedDate": "March 2024",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      "description": "A premium 25-story commercial complex in the heart of Dhaka's business district featuring modern office spaces and retail areas.",
+      "area": "85,000 sq ft",
+      "value": "৳380 Crore",
+      "features": [
+        "Earthquake Resistant Design",
+        "24/7 Power Backup",
+        "Rooftop Garden",
+        "Underground Parking (300 spaces)"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Banani Lakeview Residences",
+      "category": "Residential",
+      "location": "Banani, Dhaka",
+      "client": "Sheltech Developers",
+      "completedDate": "January 2024",
+      "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+      "description": "Luxury residential complex with 80 premium apartments overlooking Banani Lake, featuring modern amenities and landscaped gardens.",
+      "area": "65,000 sq ft",
+      "value": "৳220 Crore",
+      "features": [
+        "Lake View Apartments",
+        "Community Center",
+        "Modern Security System",
+        "Children's Play Area"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Popular Medical College Extension",
+      "category": "Healthcare",
+      "location": "Dhanmondi, Dhaka",
+      "client": "Popular Medical College",
+      "completedDate": "December 2023",
+      "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&q=80",
+      "description": "Modern 150-bed hospital extension with specialized care units, advanced diagnostic facilities, and patient-centric design.",
+      "area": "55,000 sq ft",
+      "value": "৳180 Crore",
+      "features": [
+        "Advanced ICU Facilities",
+        "Modular Patient Rooms",
+        "Modern Diagnostic Lab",
+        "Pharmacy & Cafeteria"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Chittagong Port Warehouse",
+      "category": "Industrial",
+      "location": "Chittagong Port Area",
+      "client": "Apex Group",
+      "completedDate": "October 2023",
+      "image": "https://images.unsplash.com/photo-1565793298595-9a879d6f0a1e?w=800&q=80",
+      "description": "Large-scale industrial warehouse facility for cargo storage and distribution serving the Chittagong Port operations.",
+      "area": "120,000 sq ft",
+      "value": "৳95 Crore",
+      "features": [
+        "Temperature Controlled Storage",
+        "Loading Docks (16 bays)",
+        "Office Complex",
+        "Fire Safety Systems"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Bashundhara Convention Center",
+      "category": "Commercial",
+      "location": "Bashundhara, Dhaka",
+      "client": "Bashundhara Group",
+      "completedDate": "September 2023",
+      "image": "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?w=800&q=80",
+      "description": "State-of-the-art convention center with 5000 person capacity, exhibition halls, and banquet facilities.",
+      "area": "180,000 sq ft",
+      "value": "৳320 Crore",
+      "features": [
+        "5000 Person Capacity",
+        "Exhibition Halls",
+        "VIP Lounges",
+        "Ample Parking"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Khulna Shipyard Facility",
+      "category": "Industrial",
+      "location": "Khulna",
+      "client": "Khulna Shipyard Ltd",
+      "completedDate": "July 2023",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "description": "Modern shipbuilding and repair facility with dry dock capabilities and advanced welding systems.",
+      "area": "250,000 sq ft",
+      "value": "৳450 Crore",
+      "features": [
+        "Dry Dock Facility",
+        "Advanced Welding Bay",
+        "Material Storage",
+        "Administrative Offices"
+      ]
+    }
+  ],
+  "shopProducts": [
+    {
+      "id": 1,
+      "name": "Professional Concrete Mixer",
+      "category": "Equipment",
+      "price": 135000,
+      "originalPrice": 165000,
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      "description": "Heavy-duty concrete mixer with 200L capacity. Perfect for construction sites and home renovation projects.",
+      "features": ["200L Drum Capacity", "Electric Motor", "Portable Design", "Rust-resistant Coating"],
+      "inStock": true,
+      "badge": "Best Seller"
+    },
+    {
+      "id": 2,
+      "name": "Industrial Safety Helmet",
+      "category": "Safety",
+      "price": 4500,
+      "originalPrice": 6500,
+      "image": "https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?w=800&q=80",
+      "description": "High-impact ABS construction helmet with ventilation and adjustable suspension system.",
+      "features": ["ABS Shell Material", "6-point Suspension", "Ventilation Ports", "Chin Strap Included"],
+      "inStock": true,
+      "badge": "Popular"
+    },
+    {
+      "id": 3,
+      "name": "Cordless Impact Drill Set",
+      "category": "Tools",
+      "price": 25000,
+      "originalPrice": 30000,
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80",
+      "description": "20V cordless drill with hammer function. Includes 2 batteries, charger, and 50-piece accessory set.",
+      "features": ["20V Lithium Battery", "Hammer Function", "2-speed Gearbox", "LED Work Light"],
+      "inStock": true,
+      "badge": null
+    },
+    {
+      "id": 4,
+      "name": "Heavy Duty Work Boots",
+      "category": "Safety",
+      "price": 8500,
+      "originalPrice": 12000,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+      "description": "Steel toe work boots with slip-resistant sole and waterproof leather construction.",
+      "features": ["Steel Toe Protection", "Waterproof Leather", "Oil Resistant Sole", "Padded Collar"],
+      "inStock": true,
+      "badge": "Sale"
+    },
+    {
+      "id": 5,
+      "name": "Construction Level Laser",
+      "category": "Equipment",
+      "price": 42000,
+      "originalPrice": 52000,
+      "image": "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=800&q=80",
+      "description": "Self-leveling laser with 360-degree horizontal line and vertical line projection.",
+      "features": ["Self-leveling", "50m Range", "Rechargeable Battery", "Magnetic Mount"],
+      "inStock": false,
+      "badge": null
+    },
+    {
+      "id": 6,
+      "name": "Professional Scaffold Set",
+      "category": "Equipment",
+      "price": 95000,
+      "originalPrice": 115000,
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "description": "Multi-purpose scaffolding system with adjustable height and platform locking mechanism.",
+      "features": ["Adjustable Height", "Locking Wheels", "500kg Capacity", "Easy Assembly"],
+      "inStock": true,
+      "badge": "New"
+    },
+    {
+      "id": 7,
+      "name": "Premium Hand Tool Kit",
+      "category": "Tools",
+      "price": 16500,
+      "originalPrice": 20000,
+      "image": "https://images.unsplash.com/photo-1581141849291-1125c7b692b5?w=800&q=80",
+      "description": "156-piece comprehensive tool set with chrome vanadium steel construction.",
+      "features": ["156 Pieces", "Chrome Vanadium Steel", "Organized Case", "Lifetime Warranty"],
+      "inStock": true,
+      "badge": null
+    },
+    {
+      "id": 8,
+      "name": "Safety Harness System",
+      "category": "Safety",
+      "price": 18500,
+      "originalPrice": 23500,
+      "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
+      "description": "Full body harness with shock-absorbing lanyard and quick-connect buckles.",
+      "features": ["Full Body Coverage", "Shock Absorber", "Quick-connect", "ANSI Certified"],
+      "inStock": true,
+      "badge": "Essential"
+    },
+    {
+      "id": 9,
+      "name": "Hydraulic Concrete Cutter",
+      "category": "Equipment",
+      "price": 185000,
+      "originalPrice": 220000,
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80",
+      "description": "High-power hydraulic concrete cutter for precise cutting of reinforced concrete.",
+      "features": ["25HP Engine", "16-inch Blade", "Water Cooling System", "Adjustable Depth"],
+      "inStock": true,
+      "badge": "Pro"
+    },
+    {
+      "id": 10,
+      "name": "Welding Machine Inverter",
+      "category": "Tools",
+      "price": 32000,
+      "originalPrice": 38000,
+      "image": "https://images.unsplash.com/photo-1581141849291-1125c7b692b5?w=800&q=80",
+      "description": "IGBT inverter welding machine with MMA and TIG functions for professional use.",
+      "features": ["200A Output", "IGBT Technology", "Hot Start", "Anti-Stick"],
+      "inStock": true,
+      "badge": null
+    },
+    {
+      "id": 11,
+      "name": "Safety Goggles Set (12pcs)",
+      "category": "Safety",
+      "price": 2400,
+      "originalPrice": 3600,
+      "image": "https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?w=800&q=80",
+      "description": "Anti-fog safety goggles with UV protection and impact resistance.",
+      "features": ["Anti-fog Coating", "UV Protection", "Impact Resistant", "Adjustable Strap"],
+      "inStock": true,
+      "badge": "Bulk"
+    },
+    {
+      "id": 12,
+      "name": "Rebar Bending Machine",
+      "category": "Equipment",
+      "price": 145000,
+      "originalPrice": 175000,
+      "image": "https://images.unsplash.com/photo-1565793298595-9a879d6f0a1e?w=800&q=80",
+      "description": "Automatic rebar bending machine for precise steel bar shaping.",
+      "features": ["32mm Capacity", "Digital Display", "Preset Programs", "Foot Pedal"],
+      "inStock": true,
+      "badge": "Industrial"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Building Construction",
+      "category": "Construction",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "description": "Complete building construction services from foundation to finishing. We handle residential, commercial, and industrial projects with precision and quality.",
+      "features": ["Structural Design", "Foundation Work", "MEP Installation", "Interior Finishing"],
+      "icon": "Building"
+    },
+    {
+      "id": 2,
+      "title": "Renovation & Remodeling",
+      "category": "Renovation",
+      "image": "https://images.unsplash.com/photo-1565793298595-9a879d6f0a1e?w=800&q=80",
+      "description": "Transform existing structures with our expert renovation services. From minor updates to complete overhauls, we breathe new life into buildings.",
+      "features": ["Space Planning", "Structural Updates", "Modern Finishes", "Energy Efficiency"],
+      "icon": "Hammer"
+    },
+    {
+      "id": 3,
+      "title": "Interior Design",
+      "category": "Design",
+      "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+      "description": "Create stunning interior spaces that blend functionality with aesthetics. Our designers bring creativity and practicality to every project.",
+      "features": ["Space Optimization", "Custom Furniture", "Lighting Design", "Material Selection"],
+      "icon": "Palette"
+    },
+    {
+      "id": 4,
+      "title": "Project Management",
+      "category": "Management",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+      "description": "End-to-end project management ensuring timely delivery, budget adherence, and quality control. We coordinate all aspects of construction.",
+      "features": ["Timeline Management", "Budget Control", "Quality Assurance", "Vendor Coordination"],
+      "icon": "ClipboardList"
+    },
+    {
+      "id": 5,
+      "title": "Architecture Planning",
+      "category": "Planning",
+      "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+      "description": "Innovative architectural solutions tailored to your vision. Our architects combine modern design principles with practical construction methods.",
+      "features": ["3D Visualization", "Blueprint Creation", "Regulatory Compliance", "Sustainable Design"],
+      "icon": "Ruler"
+    },
+    {
+      "id": 6,
+      "title": "Electrical & Plumbing",
+      "category": "MEP",
+      "image": "https://images.unsplash.com/photo-1621905251914-4707578333c3?w=800&q=80",
+      "description": "Professional electrical and plumbing installations meeting all safety standards. We ensure reliable systems for your building's infrastructure.",
+      "features": ["Wiring Installation", "Plumbing Systems", "Safety Inspections", "Maintenance"],
+      "icon": "Zap"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Sustainable Construction Trends in Bangladesh 2024",
+      "category": "Industry Trends",
+      "author": "Engr. Rafiqul Islam",
+      "date": "January 15, 2024",
+      "image": "https://images.unsplash.com/photo-1518005068251-37900150dfca?w=800&q=80",
+      "excerpt": "Exploring the rise of green building practices and eco-friendly materials reshaping Bangladesh's construction landscape.",
+      "content": "The construction industry in Bangladesh is witnessing a significant shift toward sustainability. From green building certifications to the use of locally sourced eco-friendly materials, developers are increasingly prioritizing environmental responsibility. This article explores the key trends driving this transformation, including solar integration, rainwater harvesting systems, and energy-efficient designs that are becoming standard in modern Bangladeshi construction projects.",
+      "tags": ["Sustainability", "Green Building", "Bangladesh"],
+      "readTime": "5 min read"
+    },
+    {
+      "id": 2,
+      "title": "The Future of Smart Buildings in Dhaka",
+      "category": "Technology",
+      "author": "Sarah Khan",
+      "date": "February 3, 2024",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "excerpt": "How IoT and automation are revolutionizing commercial and residential spaces in Bangladesh's capital.",
+      "content": "Smart building technology is rapidly transforming Dhaka's skyline. From automated lighting and climate control to integrated security systems and energy management, IoT solutions are making buildings more efficient and user-friendly. This comprehensive guide examines the latest smart building technologies being implemented in Bangladesh, their benefits, and what property owners need to know about upgrading their spaces.",
+      "tags": ["Smart Buildings", "IoT", "Technology"],
+      "readTime": "7 min read"
+    },
+    {
+      "id": 3,
+      "title": "Construction Safety Standards: What You Need to Know",
+      "category": "Safety",
+      "author": "Mohammad Ali",
+      "date": "March 12, 2024",
+      "image": "https://images.unsplash.com/photo-1590642916589-592bca10dfbf?w=800&q=80",
+      "excerpt": "A comprehensive overview of safety regulations and best practices for construction sites in Bangladesh.",
+      "content": "Workplace safety is paramount in the construction industry. This article provides an in-depth look at current safety standards in Bangladesh, including worker protection requirements, equipment safety protocols, and emergency response procedures. We also examine case studies of successful safety implementations and provide practical tips for maintaining a safe construction environment.",
+      "tags": ["Safety", "Regulations", "Best Practices"],
+      "readTime": "6 min read"
+    },
+    {
+      "id": 4,
+      "title": "Budget Planning for Your Dream Home",
+      "category": "Tips & Guides",
+      "author": "Fatima Rahman",
+      "date": "April 8, 2024",
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+      "excerpt": "Expert advice on creating realistic budgets and avoiding common financial pitfalls during home construction.",
+      "content": "Building a home is a significant financial undertaking that requires careful planning. This guide walks you through the essential steps of construction budgeting, from initial estimates to contingency planning. Learn how to prioritize expenses, negotiate with contractors, and manage unexpected costs that often arise during building projects. Our experts share insights on financing options and cost-saving strategies specific to the Bangladesh market.",
+      "tags": ["Budgeting", "Home Construction", "Finance"],
+      "readTime": "8 min read"
+    },
+    {
+      "id": 5,
+      "title": "Modern Materials Transforming Bangladesh Construction",
+      "category": "Materials",
+      "author": "Engr. Tahmid Hasan",
+      "date": "May 20, 2024",
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+      "excerpt": "From bamboo composites to recycled concrete, discover innovative materials gaining traction in local construction.",
+      "content": "The materials used in construction are evolving rapidly. This article highlights cutting-edge building materials now available in Bangladesh, including high-performance concrete, sustainable bamboo products, and innovative insulation solutions. We discuss the advantages of these materials, their cost implications, and how they're helping builders create stronger, more sustainable structures.",
+      "tags": ["Materials", "Innovation", "Sustainability"],
+      "readTime": "5 min read"
+    },
+    {
+      "id": 6,
+      "title": "Navigating Building Permits in Dhaka",
+      "category": "Legal",
+      "author": "Advocate Nabila Chowdhury",
+      "date": "June 5, 2024",
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+      "excerpt": "A step-by-step guide to obtaining construction permits and navigating regulatory requirements efficiently.",
+      "content": "Understanding the permit process is crucial for any construction project in Dhaka. This comprehensive guide breaks down the regulatory landscape, explaining required documentation, approval timelines, and common challenges faced by builders. We provide actionable tips for expediting the permit process and ensuring your project remains compliant with all local regulations and building codes.",
+      "tags": ["Permits", "Legal", "Regulations"],
+      "readTime": "6 min read"
+    }
+  ]
+}

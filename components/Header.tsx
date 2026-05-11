@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { 
   Phone, 
   Mail, 
@@ -9,10 +12,26 @@ import {
 } from 'lucide-react';
 
 const Header = () => {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(path);
+  };
+
+  const navLinkClass = (path: string) => {
+    const baseClass = "px-6 py-3 cursor-pointer transition-colors";
+    const activeClass = "bg-secondary text-white";
+    const inactiveClass = "hover:bg-secondary/10";
+    return `${baseClass} ${isActive(path) ? activeClass : inactiveClass}`;
+  };
+
   return (
-    <header className="w-full font-sans">
+    <header className="w-full font-sans sticky top-0 z-50">
       {/* TOP STRIP */}
-      <div className="bg-secondary text-white py-2 px-4 border-b border-white/10">
+      {/* <div className="bg-secondary text-white py-2 px-4 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <p className="font-medium outfit">Leading Construction Company in Bangladesh Since 1995.</p>
           <div className="flex gap-4 border-l border-white/20 pl-4"> 
@@ -22,7 +41,7 @@ const Header = () => {
             <span className="font-bold cursor-pointer hover:text-yellow-500 outfit">f</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* MIDDLE INFO SECTION */}
       <div className="bg-secondary text-white py-4 px-4">
@@ -38,7 +57,7 @@ const Header = () => {
               </svg>
             </div>
             <h1 className="text-4xl font-black tracking-tighter">
-              Building<span className="text-primary">BD</span>
+              VERTEX <span className="text-primary"></span>
             </h1>
           </div>
 
@@ -78,26 +97,27 @@ const Header = () => {
       <nav className="bg-primary text-secondary">
         <div className="max-w-7xl mx-auto px-4">
           <ul className="flex flex-wrap items-center justify-center md:justify-start font-bold uppercase tracking-wide text-sm">
-            <li className="px-6 py-3 bg-secondary text-white cursor-pointer">
+            <li className={navLinkClass('/') }>
               <Link href="/">Home</Link>
             </li>
-            <li className="px-6 py-3 hover:bg-secondary/10 cursor-pointer flex items-center gap-1">
-              Services <ChevronDown size={14} />
+            <li className={navLinkClass('/services')}>
+              <Link href="/services">Services</Link>
             </li>
-            <li className="px-6 py-3 hover:bg-secondary/10 cursor-pointer">
+            <li className={navLinkClass('/projects')}>
               <Link href="/projects">Projects</Link>
             </li>
-            <li className="px-6 py-3 hover:bg-secondary/10 cursor-pointer flex items-center gap-1">
-              Pages <ChevronDown size={14} />
-            </li>
-            <li className="px-6 py-3 hover:bg-secondary/10 cursor-pointer">
+            {/* <li className="px-6 py-3 hover:bg-secondary/10 cursor-pointer flex items-center gap-1">
+              Pages 
+              <ChevronDown size={14} />
+            </li> */}
+            <li className={navLinkClass('/blog')}>
               <Link href="/blog">Blog</Link>
             </li>
-            <li className="px-6 py-3 hover:bg-secondary/10 cursor-pointer">
+            <li className={navLinkClass('/shop')}>
               <Link href="/shop">Shop</Link>
             </li>
-            <li className="px-6 py-3 hover:bg-secondary/10 cursor-pointer">
-              <Link href="/contact">Contact Us</Link>
+            <li className={navLinkClass('/contact-us')}>
+              <Link href="/contact-us">Contact Us</Link>
             </li>
           </ul>
         </div>

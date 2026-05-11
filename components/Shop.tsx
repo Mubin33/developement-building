@@ -1,114 +1,56 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { X, ShoppingCart, Plus, Minus, Trash2, Package, Wrench, HardHat, Hammer, Drill, Check } from 'lucide-react';
 
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  quantity: number;
+}
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  originalPrice: number;
+  image: string;
+  category: string;
+  badge?: string;
+  inStock: boolean;
+  description: string;
+  features: string[];
+}
+
 const Shop = () => {
-  const [cart, setCart] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showCart, setShowCart] = useState(false);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const products = [
-    {
-      id: 1,
-      name: "Professional Concrete Mixer",
-      category: "Equipment",
-      price: 135000,
-      originalPrice: 165000,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
-      description: "Heavy-duty concrete mixer with 200L capacity. Perfect for construction sites and home renovation projects.",
-      features: ["200L Drum Capacity", "Electric Motor", "Portable Design", "Rust-resistant Coating"],
-      inStock: true,
-      badge: "Best Seller"
-    },
-    {
-      id: 2,
-      name: "Industrial Safety Helmet",
-      category: "Safety",
-      price: 4500,
-      originalPrice: 6500,
-      image: "https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?w=800&q=80",
-      description: "High-impact ABS construction helmet with ventilation and adjustable suspension system.",
-      features: ["ABS Shell Material", "6-point Suspension", "Ventilation Ports", "Chin Strap Included"],
-      inStock: true,
-      badge: "Popular"
-    },
-    {
-      id: 3,
-      name: "Cordless Impact Drill Set",
-      category: "Tools",
-      price: 25000,
-      originalPrice: 30000,
-      image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80",
-      description: "20V cordless drill with hammer function. Includes 2 batteries, charger, and 50-piece accessory set.",
-      features: ["20V Lithium Battery", "Hammer Function", "2-speed Gearbox", "LED Work Light"],
-      inStock: true,
-      badge: null
-    },
-    {
-      id: 4,
-      name: "Heavy Duty Work Boots",
-      category: "Safety",
-      price: 8500,
-      originalPrice: 12000,
-      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
-      description: "Steel toe work boots with slip-resistant sole and waterproof leather construction.",
-      features: ["Steel Toe Protection", "Waterproof Leather", "Oil Resistant Sole", "Padded Collar"],
-      inStock: true,
-      badge: "Sale"
-    },
-    {
-      id: 5,
-      name: "Construction Level Laser",
-      category: "Equipment",
-      price: 42000,
-      originalPrice: 52000,
-      image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=800&q=80",
-      description: "Self-leveling laser with 360-degree horizontal line and vertical line projection.",
-      features: ["Self-leveling", "50m Range", "Rechargeable Battery", "Magnetic Mount"],
-      inStock: false,
-      badge: null
-    },
-    {
-      id: 6,
-      name: "Professional Scaffold Set",
-      category: "Equipment",
-      price: 95000,
-      originalPrice: 115000,
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-      description: "Multi-purpose scaffolding system with adjustable height and platform locking mechanism.",
-      features: ["Adjustable Height", "Locking Wheels", "500kg Capacity", "Easy Assembly"],
-      inStock: true,
-      badge: "New"
-    },
-    {
-      id: 7,
-      name: "Premium Hand Tool Kit",
-      category: "Tools",
-      price: 16500,
-      originalPrice: 20000,
-      image: "https://images.unsplash.com/photo-1581141849291-1125c7b692b5?w=800&q=80",
-      description: "156-piece comprehensive tool set with chrome vanadium steel construction.",
-      features: ["156 Pieces", "Chrome Vanadium Steel", "Organized Case", "Lifetime Warranty"],
-      inStock: true,
-      badge: null
-    },
-    {
-      id: 8,
-      name: "Safety Harness System",
-      category: "Safety",
-      price: 18500,
-      originalPrice: 23500,
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
-      description: "Full body harness with shock-absorbing lanyard and quick-connect buckles.",
-      features: ["Full Body Coverage", "Shock Absorber", "Quick-connect", "ANSI Certified"],
-      inStock: true,
-      badge: "Essential"
-    }
-  ];
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/shop');
+        const result = await response.json();
+        if (result.success) {
+          setProducts(result.data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch products:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const getCategoryIcon = (category) => {
+    fetchProducts();
+  }, []);
+
+  const getCategoryIcon = (category: string) => {
     switch(category) {
       case 'Equipment': return <Package size={16} />;
       case 'Tools': return <Wrench size={16} />;
@@ -117,7 +59,7 @@ const Shop = () => {
     }
   };
 
-  const addToCart = (product) => {
+  const addToCart = (product: Product) => {
     setCart(prev => {
       const existing = prev.find(item => item.id === product.id);
       if (existing) {
@@ -129,7 +71,7 @@ const Shop = () => {
     });
   };
 
-  const updateQuantity = (id, delta) => {
+  const updateQuantity = (id: string, delta: number) => {
     setCart(prev => prev.map(item => {
       if (item.id === id) {
         const newQty = Math.max(1, item.quantity + delta);
@@ -139,12 +81,28 @@ const Shop = () => {
     }));
   };
 
-  const removeFromCart = (id) => {
+  const removeFromCart = (id: string) => {
     setCart(prev => prev.filter(item => item.id !== id));
   };
 
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  if (loading) {
+    return (
+      <section className="py-20 bg-white px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Construction Shop</h2>
+            <div className="w-16 h-1 bg-primary mx-auto"></div>
+          </div>
+          <div className="flex justify-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-white px-4">

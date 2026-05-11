@@ -44,7 +44,7 @@ const Footer = () => {
                     <polyline points="9 22 9 12 15 12 15 22" />
                   </svg>
                 </div>
-                <span className="text-2xl font-black tracking-tighter">Building<span className="text-primary">BD</span></span>
+                <span className="text-2xl font-black tracking-tighter">VERTEX<span className="text-primary"> </span></span>
               </div>
             </div>
 

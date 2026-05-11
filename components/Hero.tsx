@@ -24,7 +24,7 @@ export default function HeroCarousel() {
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
-    <section className="relative w-full h-[900px] overflow-hidden group">
+    <section className="relative w-full h-[500px] lg:h-[900px] overflow-hidden group">
       {/* Carousel Viewport */}
       <div className="overflow-hidden h-150" ref={emblaRef}>
         <div className="flex h-full">
@@ -79,7 +79,7 @@ export default function HeroCarousel() {
 
       {/* Bottom Service Cards Mockup */}
       {/* Bottom Service Cards */}
-      <div className="absolute bottom-12 z-30 w-full px-4">
+      <div className="lg:absolute bottom-12 z-30 w-full px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 items-end">
           
           {/* Left Card */}
